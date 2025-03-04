@@ -1,0 +1,2 @@
+# Women-Safety-Using-Computer-Vision-And-Deep-Learning-for-Threat-Detection
+This project, developed for the Smart India Hackathon (SIH), uses computer vision and deep learning techniques to enhance women’s safety by detecting potential threats in real-time. Leveraging advanced image recognition and analysis, the system identifies dangerous situations and sends alerts to authorities or nearby individuals.
