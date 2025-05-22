@@ -3,8 +3,8 @@ import cv2
 import time
 
 # Initialize the Telegram bot
-bot = telebot.TeleBot("6843529361:AAEEPwP36laT-Hc8nO3CQHcuwg80tIqQOH8")
-CHAT_ID = "1484998700"
+bot = telebot.TeleBot("7756149194:AAHbiAD0_OakFFKGx7ZtFA7acg_alvQV5HI")
+CHAT_ID = "7533050917"
 
 last_alert_time = 0
 
@@ -13,7 +13,7 @@ def send_telegram_alert(frame, message):
     global last_alert_time
     current_time = time.time()
     
-    if current_time - last_alert_time >= 60:
+    if current_time - last_alert_time >= 5:
         try:
             cv2.imwrite("alert.jpg", frame)
             with open("alert.jpg", 'rb') as photo:

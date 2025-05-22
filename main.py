@@ -1,18 +1,36 @@
 import cv2
 import time
 import mediapipe as mp
-from a_person import detect_person
-from b_gender import classify_gender
-from d_track import CentroidTracker
-from e_alert import is_female_surrounded
-from h_pose import detect_action
-from f_alert import send_telegram_alert
-from g_facial import classify_face, draw_selected_landmarks  # Import the functions
+# from a_person import detect_person
+# from b_gender import classify_gender
+# from d_track import CentroidTracker
+# from e_alert import is_female_surrounded
+# from h_pose import detect_actionx
+# from f_alert import send_telegram_alert
+# from g_facial import classify_face, draw_selected_landmarks  # Import the functions
+
+from Person_Detection import detect_person
+from Gender_Detection import classify_gender
+from Centroid_Tracker import CentroidTracker
+from SOS_Condition import is_female_surrounded
+from Pose_Detection import detect_action
+from Telebot_Alert import send_telegram_alert
+from Emotion_Detection import classify_face, draw_selected_landmarks  # Import the functions
 
 # Initialize video capture and tracker
-path1 = r'C:\Users\91702\final_project\vid1.mp4'
+path1 = r'video2.mp4'
 path2 = r'C:\Users\91702\final_project\vid2.mp4'
-webcam = cv2.VideoCapture(path1)
+
+
+#path1 = cv2.VideoCapture(0)
+
+
+#if not path1.isOpened():
+ #   print("Cannot open camera")
+  #  exit()
+webcam = cv2.VideoCapture(r'video2.mp4')  # video file
+webcam = cv2.VideoCapture(path1) #video file
+#webcam = path1           #live webcam
 tracker = CentroidTracker()
 
 mp_holistic = mp.solutions.holistic.Holistic(static_image_mode=False, min_detection_confidence=0.5)
